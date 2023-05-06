@@ -5,4 +5,4 @@ Vào thư mục src:
 `cd src`  
 Chạy môi trường ảo:  
 `".venv\Scripts\activate.bat"`  
-Sau đó, có thể thử các hàm trong RSA.py bằng cách import RSA  
+Sau đó, có thể thử các hàm trong RSA.py bằng cách `import RSA`  
