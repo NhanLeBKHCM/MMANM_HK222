@@ -69,17 +69,19 @@ def Prime(numberOfBits):
             # print(prime_candidate)
             return prime_candidate
 
-#Hàm tìm x,y,gcd với a*x+b*y=gcd(a,b)
-def extended_gcd(a,b):
-    x,y, u,v = 0,1, 1,0
-    while a != 0:
-        q, r = b//a, b%a
-        m, n = x-u*q, y-v*q
-        b,a, x,y, u,v = a,r, u,v, m,n
-    gcd = b
-    return gcd, x, y
+
 
 def powermod(a, b, n):
+    #Hàm tìm x,y,gcd với a*x+b*y=gcd(a,b)
+    def extended_gcd(a,b):
+        x,y, u,v = 0,1, 1,0
+        while a != 0:
+            q, r = b//a, b%a
+            m, n = x-u*q, y-v*q
+            b,a, x,y, u,v = a,r, u,v, m,n
+        gcd = b
+        return gcd, x, y
+
     r = 1
     flag=False
     if(b<0):
@@ -96,12 +98,11 @@ def powermod(a, b, n):
             r=r%n
     return r
 
-def gcd(a, b):
-    x, y, u, v = 0, 1, 1, 0
-    while a != 0:
-        q, r = b // a, b % a
-        m, n = x - u*q, y - v*q
-        b, a, x, y, u, v = a, r, u, v, m, n
+def gcd(a,b):
+    while(a!=0):
+        c=a
+        a=b%a
+        b=c
     return b
 
 def RsaKey(n):
@@ -139,8 +140,8 @@ def decrypt(ct,priv):
     pt=number.long_to_bytes(pt)
     return pt.decode('utf8')
 
-from Crypto.PublicKey import RSA
-p=number.getPrime(1024)
-a=8
-# print(len(bin(RsaKey(2048)[1][0])[2:]))
-# print(len(bin(RSA.generate(2048).p)[2:]))
+# from Crypto.PublicKey import RSA
+# p=number.getPrime(1024)
+# a=8
+# # print(len(bin(RsaKey(2048)[1][0])[2:]))
+# # print(len(bin(RSA.generate(2048).p)[2:]))
