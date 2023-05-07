@@ -97,12 +97,11 @@ def powermod(a, b, n):
             r=r%n
     return r
 
-def gcd(a, b):
-    x, y, u, v = 0, 1, 1, 0
-    while a != 0:
-        q, r = b // a, b % a
-        m, n = x - u*q, y - v*q
-        b, a, x, y, u, v = a, r, u, v, m, n
+def gcd(a,b):
+    while(a!=0):
+        c=a
+        a=b%a
+        b=c
     return b
 
 def RsaKey(n):
