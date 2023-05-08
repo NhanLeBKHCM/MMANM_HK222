@@ -108,7 +108,7 @@ def gcd(a,b):
 
 def RsaKey(n):
     """
-    Tạo bộ khóa RSA với số nguyên tố có độ dài n bits
+    Tạo bộ khóa RSA với số N có độ dài n bits
     """
     p = Prime(n//2+n%2)
     q = Prime(n//2)
