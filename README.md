@@ -12,7 +12,7 @@ Thư mục `src` lưu tất cả mã bao gồm:
 
 Để chạy được các file trên yêu cầu chạy các lệnh cài đặt sau:  
 \-`pip install pycryptodome`  
-\-`pip install gmpy2`
+\-`pip install gmpy2`  
 \-`pip install rsa`
 
 ## Các module
