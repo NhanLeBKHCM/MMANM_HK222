@@ -73,13 +73,14 @@ def Prime(numberOfBits):
 def powermod(a, b, n):
     #Hàm tìm x,y,gcd với a*x+b*y=gcd(a,b)
     def extended_gcd(a,b):
-        x,y, u,v = 0,1, 1,0
-        while a != 0:
-            q, r = b//a, b%a
-            m, n = x-u*q, y-v*q
-            b,a, x,y, u,v = a,r, u,v, m,n
-        gcd = b
-        return gcd, x, y
+        x,y,x1,y1=1,0,0,1
+        a1,b1=a,b
+        while(b1!=0):
+            q=a1//b1
+            x,x1=x1,x-q*x1
+            y,y1=y1,y-q*y1
+            a1,b1=b1,a1-q*b1
+        return a1,x,y
 
     r = 1
     flag=False
